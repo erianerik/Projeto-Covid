@@ -15,10 +15,12 @@ public class SistemaServiceImp implements SistemaService {
 	public ResultadoDadosModel buscarDadosCidade(String estado, String cidade) throws Exception {
 		ResultadoDadosModel dadosCovid = new ResultadoDadosModel();
 		
+		String teste = "https://brasil.io/api/v1/dataset/covid19/caso_full/data/?city=" + cidade + "&city_ibge_code=&date=&format=json&is_last=&order_for_place=&place_type=&search=&state=" + estado;
 		
-		String retornoDaRequisição = Request.Get("https://brasil.io/api/v1/dataset/covid19/caso_full/data/?city="
-				+ cidade + "&city_ibge_code=&date=&format=json&is_last=&order_for_place=&place_type=&search=&state="
-				+ estado).execute().returnContent().asString();
+ 		String retornoDaRequisição = Request.Get("https://brasil.io/api/v1/dataset/covid19/caso_full/data/?city=" + cidade + "&city_ibge_code=&date=&format=json&is_last=&order_for_place=&place_type=&search=&state=" + estado)
+ 				.execute()
+ 				.returnContent()
+ 				.asString();
 		
 
 		dadosCovid = mapper.readValue(retornoDaRequisição, ResultadoDadosModel.class);

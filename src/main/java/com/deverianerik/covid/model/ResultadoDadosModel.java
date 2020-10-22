@@ -2,14 +2,20 @@ package com.deverianerik.covid.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ResultadoDadosModel {
 	
+	@JsonProperty("count")
 	private int count;
 	
+	@JsonProperty("next")
 	private String next;
 	
+	@JsonProperty("previous")
 	private String previous;
 	
+	@JsonProperty("results")
 	private List<ResultadoDadosItensModel> results;
 	
 	public int getCount() {

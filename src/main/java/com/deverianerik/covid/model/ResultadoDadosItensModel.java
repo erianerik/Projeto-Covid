@@ -1,27 +1,64 @@
 package com.deverianerik.covid.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonRootName("results")
 public class ResultadoDadosItensModel {
 	
+	@JsonProperty("city")
 	private String city;
+	
+	@JsonProperty("city_ibge_code")
 	private int cityIbgeCode;
+	
+	@JsonIgnoreProperties("date")
 	private String date;
+	
+	@JsonProperty("epidemiological_week")
 	private int epidemiologicalWeek;
+
+	@JsonProperty("estimated_population")
 	private int estimatedPopulation;
+	
+	@JsonProperty("estimated_population_2019")
 	private int estimatedPopulationLastYear;
+	
+	@JsonProperty("is_last")
 	private boolean isLast;
+	
+	@JsonProperty("is_repeated")
 	private boolean isRepeated;
+	
+	@JsonProperty("last_available_confirmed")
 	private int lastAvailableConfirmed;
+	
+	@JsonProperty("last_available_confirmed_per_100k_inhabitants")
 	private double lastAvailableConfirmedPerCemKInhabitants;
+	
+	@JsonProperty("last_available_date")
 	private String lastAvailableDate;
+	
+	@JsonProperty("last_available_death_rate")
 	private double lastAvailableDeathRate;
+	
+	@JsonProperty("last_available_deaths")
 	private int lastAvailableDeaths;
+	
+	@JsonProperty("new_confirmed")
 	private int newConfirmed;
+	
+	@JsonProperty("new_deaths")
 	private int newDeaths;
+	
+	@JsonProperty("order_for_place")
 	private int orderForPlace;
+	
+	@JsonProperty("place_type")
 	private String placeType;
+	
+	@JsonProperty("state")
 	private String state;
 	
 	public String getCity() {

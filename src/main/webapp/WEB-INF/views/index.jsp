@@ -78,17 +78,17 @@
 		<section class="main-content-data__section-output">
 			<div class="section-output__card">
 				<h2 class="header--subtitle">Número de casos</h2>
-				<p class="header--description">...</p>
+				<p class="header--description" id="number-cases">...</p>
 			</div>
 
 			<div class="section-output__card">
 				<h2 class="header--subtitle">Mortes confirmadas</h2>
-				<p class="header--description">...</p>
+				<p class="header--description" id="confirmed-deaths">...</p>
 			</div>
 
 			<div class="section-output__card">
 				<h2 class="header--subtitle">Data de atualização</h2>
-				<p class="header--description">...</p>
+				<p class="header--description" id="update-date">...</p>
 			</div>
 		</section>
 	</main>

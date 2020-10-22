@@ -1,12 +1,15 @@
 $(".input-submit").click(function() {
 	event.preventDefault();
 
-	var state = $("#estado").val();
-	var city = $("#input-city").val();
+	let dadosCovid = {};
+	let state = $("#estado").val();
+	let city = $("#input-city").val();
 
 	if (validationFields(state, city)) {
+		city = verificationCitySeparatedSpace(city);
 		removeErrors();
 		requestAjaxApi(state,city);
+
 	} else {
 		showErrors();
 	}
@@ -29,7 +32,8 @@ function removeErrors() {
 }
 
 function requestAjaxApi(state, city) {
-	debugger;
+	let dadosCovid = {};
+	
 	$.ajax({
 		type: 'GET',
 		url: "/buscarDados",
@@ -37,11 +41,34 @@ function requestAjaxApi(state, city) {
 			estado: state,
 			cidade: city
 		},
-		success: function (dadosCovid){
-			console.log(dadosCovid)
-		},
-		error: function(e) {
-    		console.log(e);
- 		}
+		success: function (data){
+			dadosCovid = (data.results[0]);
+			showData(dadosCovid);
+				
+		}
 	});
+	
+	
+}
+
+function showData(dadosCovid) {
+	let dataUpdate = dadosCovid.date;
+	dataUpdate = dataUpdate.split("-");
+	console.log(dataUpdate);
+	
+	let date = new Date(dataUpdate[0], dataUpdate[1] - 1, dataUpdate[2]);
+
+	
+	$("#number-cases").html(dadosCovid.last_available_confirmed);
+	$("#confirmed-deaths").html(dadosCovid.last_available_deaths);
+	$("#update-date").html(date.toLocaleDateString());
+}
+
+function verificationCitySeparatedSpace(city){
+		if(city.split(" ").length > 1) {
+			city = city.split(" ");
+			city = city.join("%20", " ");
+			return city;
+		}
+	return city;
 }
