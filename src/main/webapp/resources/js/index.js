@@ -29,16 +29,19 @@ function removeErrors() {
 }
 
 function requestAjaxApi(state, city) {
+	debugger;
 	$.ajax({
-		url: ("buscarDados"),
 		type: 'GET',
+		url: "/buscarDados",
 		data: {
 			estado: state,
 			cidade: city
 		},
-		success: function() {
-			console.log("Qual foi")
-		}
-		
-	})
+		success: function (dadosCovid){
+			console.log(dadosCovid)
+		},
+		error: function(e) {
+    		console.log(e);
+ 		}
+	});
 }
