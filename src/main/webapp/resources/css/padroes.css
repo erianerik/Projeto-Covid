@@ -1,0 +1,20 @@
+.validation {
+    width: 100%;
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+    display: none;
+}
+
+.error {
+    border-color: red !important;
+}
+
+@media screen and (min-width: 1000px) {
+    .validation {
+        width: auto;
+        position: absolute;
+        left: 42%;
+        top: 76%;
+    }
+}

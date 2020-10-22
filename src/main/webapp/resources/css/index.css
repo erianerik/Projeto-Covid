@@ -1,0 +1,134 @@
+.main-content-data {
+    width: 85%;
+    height: 95%;
+    margin: 5% auto;
+    background-color: #fff;
+}
+
+.section-form__form-input-data {
+    width: 100%;
+    height: 60%;
+    position: relative;
+}
+
+.form-input-data__input-other-info {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-other-info__header {
+    color: #353541;
+}
+
+.header--title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header--subtitle {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+
+.input-other-info__inputs {
+    width: 100%;
+}
+
+.input-data {
+    box-sizing: border-box;
+    width: 90%;
+    height: 2.3rem;
+    padding: 0 1rem;
+    margin-top: 5%;
+    color: #353541;
+    border: none;
+    border-radius: .5rem;
+    border: 2px solid #E6E6E6;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-submit {
+    display: inline-block;
+    width: 50%;
+    height: 28%;
+    margin-top: 5%;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #32D99C;
+    box-shadow: 0px 4px 4px 0px #4EBF96;
+    cursor: pointer;
+}
+.main-content-data__section-output {
+    margin-top: 10%;
+}
+.section-output__card {
+    text-align: center;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-content-data {
+        width: 95%;
+        height: auto;
+        padding: 1rem;
+    }
+    .form-input-data__input-other-info {
+        flex-direction: row;
+    }
+    .header--subtitle {
+        font-size: 1rem;
+        width: 80%;
+    }
+    .input-other-info__header {
+        width: 70%;
+        text-align: left;
+    }
+    .input-other-info__inputs {
+        display: flex;
+        align-items: center;
+    }
+    .input-data {
+        width: 35%;
+        margin: 0 1%;
+    }
+    .input-submit {
+        width: 15%;
+        height: 2.3rem;
+        margin: 0;
+        box-shadow: 0px 1px 4px 0px #4EBF96;
+    }
+    .main-content-data__section-output {
+        width: 100%;
+        height: 4rem;
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #eef4f4;
+    }
+    .main-content-data__section-output .header--subtitle {
+        margin: 0 auto;
+    }
+    .section-output__card {
+        width: 30%;
+    }
+}
